@@ -1,0 +1,55 @@
+deploy contract
+
+0x60058060006000396000F300
+
+label_0000:
+	// Inputs [1] { @000A  memory[0x00:0x05] }
+	0000    60  PUSH1 0x05
+	0002    80  DUP1
+	0003    60  PUSH1 0x00
+	0005    60  PUSH1 0x00
+	0007    39  CODECOPY
+	0008    60  PUSH1 0x00
+	000A    F3  *RETURN
+	// Stack delta = +0
+	// Outputs [2]
+	// {
+	//     @0007  memory[0x00:0x05] = code[0x00:0x05]
+	//     @000A  return memory[0x00:0x05];
+	// }
+	// Block terminates
+
+	000B    00    *STOP
+
+
+// First we need to add the code in memory. 
+// The code is part of the `codecopy`, which is the txdata we're currently looking at
+
+// There are 2 parts of txdata:
+// 1. Loading the code in memory
+// 2. The actual running bytecode
+
+// codecopy needs 3 arguments [destination offset in memory] [start] [length]
+// it reads from txdata and writes to memory
+
+// How long the code is
+PUSH [length]
+
+// Where the code is located in txdata
+PUSH [start] 
+
+// Where it should be saved in memory, always 0
+PUSH [0]
+
+// Once we have all 3 parameters we can call CODECOPY
+CODECOPY
+
+// Now we have the bytecode in memory.
+// We need to return that code and stop. Returning it will make that code be the contract code.
+
+// Calling return needs to arguments [start] [length]
+PUSH [length]
+PUSH [0]
+RETURN
+
+The bytecode should look like this
