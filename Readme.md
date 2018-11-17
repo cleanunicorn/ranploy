@@ -1,9 +1,6 @@
 # Ranploy
 
-Tool to generate the transaction data to deploy bytecode to a new contract. 
-Use this if you already have the bytecode and want to create a new Ethereum smart contract with that bytecode.
-
-It's actually useful if you want to create contracts with a random hex string for code.
+Tool to generate the transaction payload `data` that will deploy a random hex string. 
 
 ## Example
 
@@ -23,4 +20,3 @@ Your contract will have this bytecode
 web3.eth.getCode("0xDdB083baD281D7242FF69E36c7565b003785cb1A")
 '0x11223344'
 ```
-
