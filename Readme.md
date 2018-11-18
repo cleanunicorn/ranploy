@@ -1,6 +1,6 @@
 # Ranploy
 
-Tool to generate the transaction payload `data` that will deploy a random hex string. 
+Tool to generate the transaction payload `data` that will deploy a random hex string as a smart contract. 
 
 ## Example
 
