@@ -3,7 +3,7 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate transaction data to deploy any random hex string to Ethereum"
+        description="Generate transaction data to deploy any random hex string to Ethereum as smart contract bytecode"
     )
 
     inputs = parser.add_argument_group("input arguments")
