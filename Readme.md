@@ -7,6 +7,10 @@
 
 Tool to generate the transaction payload `data` that will deploy a random hex string as a smart contract. 
 
+## Demo
+
+[![asciicast](https://asciinema.org/a/5Z0qEdjjb5fVvvYZbmhi6zxZq.svg)](https://asciinema.org/a/5Z0qEdjjb5fVvvYZbmhi6zxZq)
+
 ## Install
 
 ```console
