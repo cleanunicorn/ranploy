@@ -20,7 +20,7 @@ $ pip install --user ranploy
 ## Example
 
 ```shell
-$ python main.py --bytecode 11223344
+$ ranploy --bytecode 11223344
 6004600d60003960046000f30011223344
 ```
 
