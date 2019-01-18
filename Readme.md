@@ -5,7 +5,7 @@
 [![PyPI](https://img.shields.io/pypi/v/ranploy.svg)](https://pypi.org/project/ranploy/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-Tool to generate the transaction payload `data` that will deploy a random hex string as a smart contract. 
+Tool to generate the transaction payload `data` that will deploy a random hex string as a smart contract.
 
 ## Demo
 
@@ -27,7 +27,10 @@ $ python main.py --bytecode 11223344
 You then need to create a transaction and use this as the payload data
 
 ```console
-web3.eth.sendTransaction({from: "0x8d26D6d498a01243820154c7Ddb63b47c00DbF6e", data: "0x6004600d60003960046000f30011223344"})
+web3.eth.sendTransaction({
+    from: "0x8d26D6d498a01243820154c7Ddb63b47c00DbF6e",
+    data: "0x6004600d60003960046000f30011223344"
+})
 ```
 
 Your contract will have this bytecode
