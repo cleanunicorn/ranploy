@@ -4,6 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3cc4f4c6999f48738ff8c6dbe26b11b7)](https://www.codacy.com/app/lucadanielcostin/ranploy)
 [![PyPI](https://img.shields.io/pypi/v/ranploy.svg)](https://pypi.org/project/ranploy/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=cleanunicorn_ranploy&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=cleanunicorn_ranploy)
 
 Tool to generate the transaction payload `data` that will deploy a random hex string as a smart contract.
 
