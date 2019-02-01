@@ -61,10 +61,10 @@ def build_deploy_string(hex_string=""):
 
 def evm_push(size=0):
     """
-        PUSH1 0 - 2**8-1
-        PUSH2 2**8 - 2**16
+        PUSH1 0 -> 2**8-1
+        PUSH2 2**8 -> 2**16
         ...
-        PUSH32 2**255 - 2**256
+        PUSH32 2**255 -> 2**256
     """
     push_size = byte_size(number=size)
 
