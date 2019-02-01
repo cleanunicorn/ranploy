@@ -27,16 +27,15 @@ def main():
 def build_deploy_string(hex_string=""):
     if hex_string.startswith("0x"):
         hex_string = hex_string[2:]
-
-    hex_string_length = int(len(hex_string) / 2)
+    bytecode_size = int(len(hex_string) / 2)
 
     # Init payload
     payload = ""
 
-    # PUSH [hex string length]
-    payload += evm_push(hex_string_length)
+    # PUSH [bytecode size]
+    payload += evm_push(bytecode_size)
     # PUSH [offset]
-    payload += evm_push(11 + byte_size(hex_string_length) * 2)
+    payload += evm_push(11 + byte_size(bytecode_size) * 2)
     # PUSH [memory_offset]
     payload += evm_push(0)
 
@@ -44,7 +43,7 @@ def build_deploy_string(hex_string=""):
     payload += evm_codecopy()
 
     # PUSH [hex string length]
-    payload += evm_push(hex_string_length)
+    payload += evm_push(bytecode_size)
     # PUSH [0]
     payload += evm_push(0)
 
@@ -60,15 +59,13 @@ def build_deploy_string(hex_string=""):
     return payload
 
 
-"""
-    PUSH1 0 - 2**8-1
-    PUSH2 2**8 - 2**16
-    ...
-    PUSH32 2**255 - 2**256
-"""
-
-
 def evm_push(size=0):
+    """
+        PUSH1 0 - 2**8-1
+        PUSH2 2**8 - 2**16
+        ...
+        PUSH32 2**255 - 2**256
+    """
     push_size = byte_size(number=size)
 
     payload = ""
@@ -77,39 +74,31 @@ def evm_push(size=0):
     return payload
 
 
-"""
-    CODECOPY
-"""
-
-
 def evm_codecopy():
+    """
+        CODECOPY
+    """
     return "39"
 
 
-"""
-    RETURN
-"""
-
-
 def evm_return():
+    """
+        RETURN
+    """
     return "f3"
 
 
-"""
-    STOP
-"""
-
-
 def evm_stop():
+    """
+        STOP
+    """
     return "00"
 
 
-"""
-    Return the byte size that this number fits in
-"""
-
-
 def byte_size(number=0):
+    """
+        Return the byte size that this number fits in
+    """
     push_size = 0
     for p in list(range(256, 0, -8)):
         if int(number / (2 ** p)) > 0:

@@ -1,0 +1,7 @@
+organization=cleanunicorn-github
+projectKey=cleanunicorn_ranploy
+serverUrl=https://sonarcloud.io
+serverVersion=7.6.0.21360
+dashboardUrl=https://sonarcloud.io/dashboard?id=cleanunicorn_ranploy
+ceTaskId=AWh7x022e5VxKu8MrJj-
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWh7x022e5VxKu8MrJj-
