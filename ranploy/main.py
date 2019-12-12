@@ -42,7 +42,7 @@ def build_deploy_string(hex_string=""):
     # CODECOPY
     payload += evm_codecopy()
 
-    # PUSH [hex string length]
+    # PUSH [bytecode size]
     payload += evm_push(bytecode_size)
     # PUSH [0]
     payload += evm_push(0)
